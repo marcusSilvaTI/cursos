@@ -22,11 +22,33 @@ public class Vetor {
                 break;
             }
         }*/
+
+        this.aumentaCapacidade();
+
         if(this.tamanho < this.elementos.length){
             this.elementos[this.tamanho] = elemento;
             this.tamanho++;       
             return true;
         }
+        return false;
+    }
+
+    public boolean adiciona(int posicao, String elemento){
+
+        this.aumentaCapacidade();
+
+        if (!(posicao >= 0 && posicao < tamanho)){
+            throw  new IllegalArgumentException("Posição inválida");
+        }
+
+        //mover todos elementos
+        for (int i = this.tamanho-1; i >= posicao; i--) {
+            this.elementos[i+1] = this.elementos[i];
+        }
+
+        this.elementos[posicao] = elemento;
+        this.tamanho++;
+
         return false;
     }
     
@@ -50,21 +72,14 @@ public class Vetor {
         return -1;
     }
 
-    public boolean adiciona(int posicao, String elemento){
-
-        if (!(posicao >= 0 && posicao < tamanho)){
-            throw  new IllegalArgumentException("Posição inválida");
+    private void aumentaCapacidade(){
+        if (this.tamanho == this.elementos.length){
+            String[] elementosNovos = new String[this.elementos.length*2];
+            for (int i = 0; i < this.elementos.length; i++) {
+                elementosNovos[i] = this.elementos[i];
+            }
+            this.elementos = elementosNovos;
         }
-
-        //mover todos elementos
-        for (int i = this.tamanho-1; i >= posicao; i--) {
-            this.elementos[i+1] = this.elementos[i];
-        }
-
-        this.elementos[posicao] = elemento;
-        this.tamanho++;
-
-        return false;
     }
 
     @Override
