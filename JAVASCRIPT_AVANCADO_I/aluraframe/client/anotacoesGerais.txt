@@ -1,0 +1,10 @@
+1. Variavel tipo let: são variaveis que só são executadas dentro de um bloco;
+2. Quando declaramos uma variavel com _ no inicio dizemos que ela não pode ser
+    vista fora do escopo que foi declarada.
+Exemplo: var _x = 10;
+3. Arrow Function:
+  Definição: Uma expressão arrow function possui uma síntaxe mais curta quando
+  comparada com expressões de função (function expressions) e vincula o valor
+  de this de maneira léxica. Arrow functions sempre são anônimas.
+  Exemplo : .map((item, indice) => item - indice % 2);
+  4. Template String
