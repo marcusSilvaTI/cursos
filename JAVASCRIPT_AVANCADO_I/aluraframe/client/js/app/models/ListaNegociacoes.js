@@ -1,6 +1,6 @@
-class ListaNegociacoesController {
+class ListaNegociacoes {
   constructor() {
-    this._negociacoes = [];
+    this._negociacoes = [];    
   }
 
   adicionaNegociacao(negociacao){
@@ -9,6 +9,11 @@ class ListaNegociacoesController {
 
   get getNegociacoes(){
     return [].concat(this._negociacoes);
+  }
+
+  esvazia(){
+    this._negociacoes = [];
+
   }
 
 }

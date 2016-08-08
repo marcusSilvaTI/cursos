@@ -8,3 +8,5 @@ Exemplo: var _x = 10;
   de this de maneira léxica. Arrow functions sempre são anônimas.
   Exemplo : .map((item, indice) => item - indice % 2);
   4. Template String
+  5. O método .reduce() do JS faz a soma de todos elementos presentes em um
+  determinado array.
